@@ -1,5 +1,5 @@
-//Utilizing npm sequelize classes Model and Datatypes
-const {Model, Datatypes} = require('sequelize');
+//Utilizing npm sequelize classes Model and DataTypes
+const {Model, DataTypes} = require('sequelize');
 //Import connection.js to connect to DB
 const sequelize = require('../config/connection');
 //Import for pw hashing function
@@ -17,17 +17,17 @@ class User extends Model {
 User.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         email:{
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
@@ -35,7 +35,7 @@ User.init(
             },
         },
         rating: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: true,
             validate:{
                 max:5,
@@ -43,11 +43,11 @@ User.init(
             }
         },
         comment: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         password: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len:[8]
