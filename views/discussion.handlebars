@@ -1,0 +1,17 @@
+<div class="card">
+    <h3 class="card-header">Discussion</h3>
+    <p>Leave comments here to start the discussion on the current book of the month.</p>
+    <div id="userComments">
+    {{#each comment.content as |comment|}}
+  {{> comment-body}}
+    {{/each}}
+    </div>
+    <form class="card-body new-post-form" id="new-post-form">
+        <label class="form-label" for="content">Comment here</label>
+        <input id="content" name="content" class="form-input" />
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+<script src="/javascript/add-comment.js"></script>
