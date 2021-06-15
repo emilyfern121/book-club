@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/emilyfern121/book-club#readme",
   "dependencies": {
+    "Router": "^2.1.0",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
@@ -27,6 +28,7 @@
     "express-session": "^1.17.2",
     "i": "^0.3.6",
     "mysql2": "^2.2.5",
+    "seed": "^0.4.4",
     "sequelize": "^6.6.2"
   }
 }
