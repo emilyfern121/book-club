@@ -1,6 +1,6 @@
 //Pathways for models User and Book to be exported
-const user = require('./User');
-const book = require('./Book');
+const User = require('./User');
+const Book = require('./Book');
 
   
   User.hasMany(Book, {
