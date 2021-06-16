@@ -20,15 +20,15 @@ Book.init(
       allowNull: false,
     },
     ISBN: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     Goodreads: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DOUBLE,
       allowNull: true,
       validate:{
           max: 5,
