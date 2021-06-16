@@ -1,4 +1,6 @@
-[
+const { Book } = require('../models')
+
+const bookdata = [
     {
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
@@ -23,8 +25,11 @@
       "rating": 3.7,
       "comment": "Where is Hercules!???"
     }
-]
+  ]
 
+const seedBook = () => Book.bulkCreate(bookdata);
+
+module.exports = seedBook;
 
 
 
