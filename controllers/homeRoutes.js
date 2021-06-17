@@ -13,6 +13,7 @@ router.get('/', async (req,res) => {
     }
 });
 
+/*
 router.get('/book/:id', async (req,res) => {
     try {
         const bookData = await Book.findByPk(req.params.id);
@@ -26,6 +27,34 @@ router.get('/book/:id', async (req,res) => {
         res.status(500).json(err);
     }
 });
+*/
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
+
+router.get('/ratings', (req, res) => {
+if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+}
+
+res.render('ratings');
+});
+
+router.get('/discussion', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('discussion');
+  });
 
 
 
