@@ -29,6 +29,9 @@ router.get('/book/:id', async (req,res) => {
 });
 */
 
+/**
+ *! Send user to home page if logged in else go to login
+ */
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -38,7 +41,10 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
-router.get('/ratings', (req, res) => {
+/**
+ *! Send user to rating page if logged in
+*/
+router.get('/rating', withAuth, (req, res) => {
 if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -47,7 +53,10 @@ if (req.session.loggedIn) {
 res.render('ratings');
 });
 
-router.get('/discussion', (req, res) => {
+/**
+ *! Send user to discussion page if logged in
+ */
+router.get('/discussion', withAuth, (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
       return;
