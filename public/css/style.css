@@ -1,14 +1,7 @@
 * {
     box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-    
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
   }
 
 /* The sidebar menu */
@@ -19,7 +12,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: rgb(102, 140, 153); /* Black */
+  background-color: lightgrey; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -45,7 +38,13 @@
   text-align: center;
 }
 
-header, footer {
+header {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 10px 10px;
+  text-align: center;
+}
+
+footer {
   margin-left: 160px; /* Same as the width of the sidebar */
   padding: 0px 10px;
   text-align: center;
@@ -56,3 +55,6 @@ header, footer {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* Login Page */
+
