@@ -6,33 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoundTable</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
     <h1>RoundTable</h1>
   </header>
+
+  <!-- Side Navigation -->
   <nav>
-    <a href="/">Home</a>
-    <a href="/discussion">Discussion</a>
-    <a href="/rating">Rating</a>
-    <a href="/pastBooks">Past Books</a>
-    <a href="/nextRead">Next Read</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-  
-    <div class="dashboard">
-      {{{body}}}
+    <div class="sidenav">
+      <a href="/">Home</a>
+      <a href="/discussion">Discussion</a>
+      <a href="/rating">Rating</a>
+      <a href="/pastBooks">Past Books</a>
+      <a href="/nextRead">Next Read</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
     </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
+  </nav>
+
+<!-- Page content -->
+  <div class="main">
+    <main>
+      <div class="dashboard">
+        {{{body}}}
+      </div>
+    </main>
+     {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+  </div>
+
+<!-- Footer -->
 <footer>Powered by <a href="https://openlibrary.org/">Open Library API</a></footer>
 </html>
