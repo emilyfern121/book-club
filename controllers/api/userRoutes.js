@@ -19,11 +19,13 @@ router.get('/', async (req, res) =>{
 });
 */
 
-// CREATE new user 
+/**
+ * !Creates a mew user
+ */
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
-        username: req.body.username,
+        name: req.body.username,
         email: req.body.email,
         password: req.body.password,
       });
@@ -39,6 +41,8 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
 /**
  * install better comments plugin
  * !Pulling in login data from login.handlebars
