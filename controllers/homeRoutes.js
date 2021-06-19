@@ -3,12 +3,16 @@ const router = require('express').Router();
 const { User, Book } = require('../models');
 const withAuth = require('../utils/auth');
 
+/**
+ *! Render home page upon hitting the homeroute
+ */
 router.get('/', async (req,res) => {
     try {
-        const dbUserData = await User.findAll();
-        //Placeholder for homepage render via handlebars
-        res.render('homepage', { dbUserData });
+        //const dbUserData = await User.findAll();
+        //Placeholder for homepage render via handlebars 
+        res.render('homepage', { loggedIn: req.session.loggedIn,});
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -42,27 +46,39 @@ router.get('/login', (req, res) => {
   });
 
 /**
+ *! Send user to signup 
+ */
+ router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
+
+/**
  *! Send user to rating page if logged in
 */
 router.get('/rating', withAuth, (req, res) => {
-if (req.session.loggedIn) {
+if (!req.session.loggedIn) {
     res.redirect('/');
     return;
 }
 
-res.render('ratings');
+res.render('ratings', {loggedIn: req.session.loggedIn,});
 });
 
 /**
  *! Send user to discussion page if logged in
  */
 router.get('/discussion', withAuth, (req, res) => {
-    if (req.session.loggedIn) {
+    if (!req.session.loggedIn) {
       res.redirect('/');
       return;
     }
   
-    res.render('discussion');
+    res.render('discussion', {loggedIn: req.session.loggedIn,});
   });
 
 
