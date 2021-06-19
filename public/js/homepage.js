@@ -1,5 +1,5 @@
 function displayBookInfo() {
-    var requestUrl = "http://covers.openlibrary.org/b/$key/$value-$size.jpg"
+    var requestUrl = "http://http://covers.openlibrary.org/b/olid/OL7440033M-S.jpg"
   fetch(requestUrl).then(function (response) {
      if (!response.ok) {
          console.log("No information found");
