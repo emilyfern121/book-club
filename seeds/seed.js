@@ -1,7 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Book } = require('../models');
+const { User, Book, Discussion } = require('../models');
 const userData = require('./userData.json');
 const bookData = require('./bookData.json');
+const discussionData = require('./discussionData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -10,6 +11,10 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+
+  /**
+   * ! Needs to be filled in for discussion.json
+   */
 
   for (const book of bookData) {
     await Book.create({

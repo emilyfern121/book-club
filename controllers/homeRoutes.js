@@ -1,11 +1,11 @@
 //import dependencies
 const router = require('express').Router();
-const { User, Book } = require('../models');
+const { User, Book , Discussion} = require('../models');
 const withAuth = require('../utils/auth');
 
-/**
- *! Render home page upon hitting the homeroute
- */
+
+//! Render home page upon hitting the homeroute
+
 router.get('/', async (req,res) => {
     try {
         //const dbUserData = await User.findAll();
@@ -88,9 +88,6 @@ router.get('/nextRead', withAuth, (req, res) => {
     
     res.render('next-read', {loggedIn: req.session.loggedIn,});
 });
-
-
-
 
 
 module.exports = router;
