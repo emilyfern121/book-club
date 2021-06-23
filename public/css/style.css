@@ -4,10 +4,6 @@
     color: black;
   }
 
-h1 {
-  color:rgb(68, 67, 67);
-}
-
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -16,7 +12,7 @@ h1 {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #fa652e; /* Black */
+  background-color: rgb(230, 90, 9); /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -28,10 +24,10 @@ h1 {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(68, 67, 67);
+  color: black;
   display: block;
   border: none;
-  background-color: #fa652e;
+  background-color: rgb(230, 90, 9);
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -58,20 +54,15 @@ footer {
   text-align: center;
 }
 
-
-
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
 
-/* Login Page */
-
-/* Past Books */
 #pastBooks {
-
   display:flex;
-  justify-content:space-around;
+  justify-content: space-evenly;
 }
+/* Login Page */
 
