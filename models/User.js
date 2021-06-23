@@ -35,7 +35,6 @@ User.init(
             },
         },
         rating: {
-            type: DataTypes.INTEGER,
             type: DataTypes.DOUBLE,
             allowNull: true,
             validate:{
