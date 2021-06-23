@@ -11,50 +11,23 @@ Discussion.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    ISBN_REF: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    book_id: {
+      type: DataTypes.INTEGER,
       references: {
           model: 'Book',
-          key: 'ISBN',
-      }
-    },
-    Goodreads_REF: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-          model: 'Book',
-          key: 'Goodreads',
+          key: 'id',
       }
     },
     user_comment: {
         type: DataTypes.STRING,
         allowNull: true,
-        references: {
-            model: 'user',
-            key: 'comment',
-        }
     },
     user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    user_name: {
-        type: DataTypes.STRING,
-        references: {
-          model: 'user',
-          key: 'name',
-        },
-      },
-    book_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'book',
+          model: 'User',
           key: 'id',
-        },
+        }
       },
   },
   {

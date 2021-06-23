@@ -9,17 +9,18 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req,res) => {
     try {
         //const dbUserData = await User.findAll();
-        const dbbookData = await Book.findAll();
-        const book = dbbookData.get({plain: true});
+        const dbBookData = await Book.findAll();
+        const books = dbBookData.map((newBook)=> newBook.get({plain: true})
+); 
         //*Placeholder for homepage render via handlebars 
-        res.render('homepage', {book, loggedIn: req.session.loggedIn,});
+        res.render('homepage', {books, loggedIn: req.session.loggedIn,});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-/*
+
 router.get('/book/:id', async (req,res) => {
     try {
         const bookData = await Book.findByPk(req.params.id);
@@ -33,7 +34,7 @@ router.get('/book/:id', async (req,res) => {
         res.status(500).json(err);
     }
 });
-*/
+
 
 
 //! Send user to home page if logged in else go to login
