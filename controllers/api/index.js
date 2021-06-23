@@ -5,7 +5,7 @@ const bookRoutes = require('./bookRoutes');
 const discussionRoutes = require('./discussionRoutes');
 
 router.use('/users', userRoutes);
-//router.use('/books', bookRoutes);
-//router.use(/discussions, discussionRoutes)
+router.use('/book', bookRoutes);
+router.use('/discussion', discussionRoutes)
 
 module.exports = router;

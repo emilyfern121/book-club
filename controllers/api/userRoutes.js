@@ -2,10 +2,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-
-/**
- * !Creates a new user in db
- */
+//!Creates a new user in db
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
@@ -24,14 +21,12 @@ router.post('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
-
+});
 
 /**
  * install better comments plugin to view highlighted comments
  * !Pulling in login data from login.handlebars
- */
-
+*/
 router.post('/login', async (req, res) => {
     try {
       const dbUserData = await User.findOne({

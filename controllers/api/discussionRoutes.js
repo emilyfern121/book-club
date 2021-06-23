@@ -6,18 +6,17 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
       const newDiscussion = await Discussion.create({
-        //...req.body,
-        user_id: req.session.user_id,
-        name: req.body.username_text,
+        ...req.body,
+        //user_id: req.session.user_id,
+        //user_name: req.body.username_text,
         user_comment: req.body.comment_text,
       });
-  
+      console.log(newDiscussion);
       res.status(200).json(newDiscussion);
     } catch (err) {
       res.status(400).json(err);
     }
-  });
-
+});
 
 // get one discussion
 router.get('/discussion/:id', async (req, res) => {
@@ -35,7 +34,6 @@ router.get('/discussion/:id', async (req, res) => {
     } catch(err) {
         res.status(500).json(err);
     }
-
-  });
+});
 
 module.exports = router;
