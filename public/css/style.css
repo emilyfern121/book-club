@@ -66,3 +66,12 @@ footer {
   .sidenav a {font-size: 18px;}
 }
 
+/* Login Page */
+
+/* Past Books */
+#pastBooks {
+
+  display:flex;
+  justify-content:space-around;
+}
+
