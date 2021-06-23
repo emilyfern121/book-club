@@ -2,10 +2,16 @@
     box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
     color: black;
+    background-color: #353535;
   }
 
-h1 {
-  color:rgb(68, 67, 67);
+
+header h1 {
+  color: #fb8c00;
+}
+
+h1, h2, label {
+  color: white;
 }
 
 /* The sidebar menu */
@@ -16,7 +22,7 @@ h1 {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #fa652e; /* Black */
+  background-color: #f46524; 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -28,10 +34,10 @@ h1 {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(68, 67, 67);
+  color: #353535;
   display: block;
   border: none;
-  background-color: #fa652e;
+  background-color: #f46524;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -66,7 +72,7 @@ footer {
   .sidenav a {font-size: 18px;}
 }
 
-/* Login Page */
+
 
 /* Past Books */
 #pastBooks {
@@ -74,4 +80,5 @@ footer {
   display:flex;
   justify-content:space-around;
 }
+
 
