@@ -2,26 +2,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-/*
-router.get('/', async (req, res) =>{
-    try {
-        const userData = await User.findAll({
-            attributes: {exclude: ['password']},
-            order: [['name', 'ASC']],
-        }).catch((err) => {
-            res.json(err);
-        });//end of error catch will display err to page if no data found
-        
-        res.status(200).json(userData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-*/
-
-/**
- * !Creates a new user in db
- */
+//!Creates a new user in db
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
@@ -40,14 +21,12 @@ router.post('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
-
+});
 
 /**
- * install better comments plugin
+ * install better comments plugin to view highlighted comments
  * !Pulling in login data from login.handlebars
- */
-
+*/
 router.post('/login', async (req, res) => {
     try {
       const dbUserData = await User.findOne({

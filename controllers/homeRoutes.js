@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
     }
 });
 
-
+//! Render book by id upon hitting 
 router.get('/book/:id', async (req,res) => {
     try {
         const bookData = await Book.findByPk(req.params.id);
