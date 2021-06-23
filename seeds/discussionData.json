@@ -1,34 +1,23 @@
 [
     {
-        "ISBN_REF": "9780743273565",
-        "Goodreads_REF": "0743273567",
+        "book_id": 1,
         "user_comment": "Needs more parties",
-        "user_id": 1,
-        "user_name": "Sal",
-        "book_id": 1
+        "user_id": 1
     },
     {
-        "ISBN_REF": "9781602701557",
-        "Goodreads_REF": "1602701555",
+        "book_id": 2,
         "user_comment": "Not enough whales",
-        "user_id": 2,
-        "user_name": "Lernantino",
-        "book_id": 2
+        "user_id": 2      
     },
     {
-        "ISBN_REF": "9780143039952",
-        "Goodreads_REF": "0143039954",
+        "book_id": 3,
         "user_comment": "Where is Hercules!???",
-        "user_id": 1,
-        "user_name": "Sal",
-        "book_id": 3
+        "user_id": 1
     },
     {
-        "ISBN_REF": "9780143039952",
-        "Goodreads_REF": "0143039954",
+        "book_id": 3,
         "user_comment": "Where is Hercules!???",
-        "user_id": 4,
-        "user_name": "Jordan",
-        "book_id": 3
+        "user_id": 4
     }
+    
 ]

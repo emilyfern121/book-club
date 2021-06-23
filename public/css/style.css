@@ -4,6 +4,10 @@
     color: black;
   }
 
+h1 {
+  color:rgb(68, 67, 67);
+}
+
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -12,7 +16,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: lightgrey; /* Black */
+  background-color: #fa652e; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -24,10 +28,10 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: black;
+  color: rgb(68, 67, 67);
   display: block;
   border: none;
-  background-color: lightgrey;
+  background-color: #fa652e;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -61,5 +65,4 @@ footer {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
 

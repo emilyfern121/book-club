@@ -20,7 +20,7 @@ router.get('/', async (req, res) =>{
 */
 
 /**
- * !Creates a mew user
+ * !Creates a new user in db
  */
 router.post('/', async (req, res) => {
     try {

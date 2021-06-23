@@ -17,10 +17,10 @@ const seedDatabase = async () => {
       ...book,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
-  }
-
-  await Discussion.bulkCreate(discussionData);
-  
+  };
+ 
+ await Discussion.bulkCreate(discussionData);
+ 
   process.exit(0);
 };
 
