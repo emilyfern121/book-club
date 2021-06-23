@@ -2,16 +2,15 @@
     box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
     color: black;
-    background-color: #353535;
+    background-color: white;
   }
 
-
-header h1 {
-  color: #fb8c00;
+header h1{
+  color:#f46524;
 }
 
-h1, h2, label {
-  color: white;
+h1, h2, h3, label, footer, p{
+  color: black;
 }
 
 /* The sidebar menu */
