@@ -1,85 +1,87 @@
+  
 * {
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    color: black;
-    
-  }
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+}
 
+html {
+  background: #353535;
+}
 
 header h1 {
-  color: #fb8c00;
+color: #fb8c00;
 }
 
-h1, h2, label {
-  color: white;
+h1, h2, label, footer {
+color: white;
 }
+
+
 
 /* The sidebar menu */
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #f46524; 
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+height: 100%; /* Full-height: remove this if you want "auto" height */
+width: 160px; /* Set the width of the sidebar */
+position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+z-index: 1; /* Stay on top */
+top: 0; /* Stay at the top */
+left: 0;
+background-color: #f46524; 
+overflow-x: hidden; /* Disable horizontal scroll */
+padding-top: 20px;
 }
 
 /* The navigation menu links */
 
 .sidenav a, #logout {
 
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #353535;
-  display: block;
-  border: none;
-  background-color: #f46524;
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 25px;
+color: #353535;
+display: block;
+border: none;
+background-color: #f46524;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, #logout {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 
 /* Style page content */
 .main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-  text-align: center;
-  background-color: #353535;
+margin-left: 160px; /* Same as the width of the sidebar */
+padding: 0px 10px;
+text-align: center;
+background-color: #353535;
 }
 
 header {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 10px 10px;
-  text-align: center;
-  background-color: #353535;
+margin-left: 160px; /* Same as the width of the sidebar */
+padding: 10px 10px;
+text-align: center;
+background-color: #353535;
 }
 
 footer {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-  text-align: center;
-  background-color: #353535;
+margin-left: 160px; /* Same as the width of the sidebar */
+padding: 0px 10px;
+text-align: center;
+background-color: #353535;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
 }
 
 
 
 /* Past Books */
 #pastBooks {
-  display:flex;
-  justify-content: space-evenly;
+display:flex;
+justify-content: space-evenly;
 }
-/* Login Page */
-
-
