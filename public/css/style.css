@@ -62,3 +62,10 @@ footer {
 
 /* Login Page */
 
+/* Past Books */
+#pastBooks {
+
+  display:flex;
+  justify-content:space-around;
+}
+

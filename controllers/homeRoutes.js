@@ -81,6 +81,16 @@ router.get('/discussion', withAuth, (req, res) => {
 });
 
 //! Send user to nextread page if logged in else go to login
+router.get('/pastBooks', withAuth, (req, res) => {
+    if (!req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    
+    res.render('past-books', {loggedIn: req.session.loggedIn,});
+});
+
+//! Send user to nextread page if logged in else go to login
 router.get('/nextRead', withAuth, (req, res) => {
     if (!req.session.loggedIn) {
       res.redirect('/');
