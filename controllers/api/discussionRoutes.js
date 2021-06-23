@@ -7,8 +7,8 @@ router.post('/', withAuth, async (req, res) => {
     try {
       const newDiscussion = await Discussion.create({
         ...req.body,
-        //user_id: req.session.user_id,
-        //user_name: req.body.username_text,
+        user_id: req.session.user_id,
+        user_name: req.body.username_text,
         user_comment: req.body.comment_text,
       });
       console.log(newDiscussion);
