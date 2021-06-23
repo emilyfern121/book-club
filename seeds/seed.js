@@ -12,16 +12,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  /**
-   * ! Needs to be filled in for discussion.json
-   */
-
   for (const book of bookData) {
     await Book.create({
       ...book,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
+
+  await Discussion.bulkCreate(discussionData);
+  
   process.exit(0);
 };
 
