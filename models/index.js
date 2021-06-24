@@ -26,7 +26,7 @@ Book.hasMany(Discussion, {
   foreignKey: 'book_id',
 });
 
-Discussion.belongsTo(User, {
+Discussion.belongsTo(Book, {
   foreignKey: 'book_id',
 });
   

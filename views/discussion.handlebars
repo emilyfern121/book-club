@@ -2,8 +2,12 @@
     <h3 class="card-header bg-info">Discussion</h3>
     <p class="text-light">Leave comments here to start the discussion on the current book of the month.</p>
     <div id="userComments">
-    {{#each comment.content as |comment|}}
-  {{> comment-body}}
+     <h4 class="text-info">Current book discussions</h4>
+    
+    {{#each discussions as |discussion| }}
+     <p class="text-light"> <a href="/discussion/{{discussion.id}}">{{Book.title}}</a>  <br> Started by {{User.name}}</p>
+     <p class="text-light"> {{user.name}} </p>
+    <!--{{> comment-body}}-->
     {{/each}}
     </div>
     <form class="comment-form card-body new-post-form" id="new-post-form">

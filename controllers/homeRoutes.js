@@ -8,12 +8,28 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
     try {
-        //const dbUserData = await User.findAll();
+        const discussData = await Discussion.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name', 'comment'],
+                },
+                {
+                    model: Book,
+                    attributes: ['title', 'author', 'ISBN', 'comment', 'user_id'],
+                },
+            ]
+        });
+
+        const discussions = discussData.map((newDiscussion)=> 
+        newDiscussion.get({plain: true}) );
+
         const dbBookData = await Book.findAll();
-        const books = dbBookData.map((newBook)=> newBook.get({plain: true})
-); 
+        const books = dbBookData.map((newBook)=> 
+        newBook.get({plain: true})); 
+
         //*Placeholder for homepage render via handlebars 
-        res.render('homepage', {books, loggedIn: req.session.loggedIn,});
+        res.render('homepage', {books, discussions, loggedIn: req.session.loggedIn,});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -71,13 +87,47 @@ res.render('ratings', {loggedIn: req.session.loggedIn,});
 
 
 //! Send user to discussion page if logged in else go to login
-router.get('/discussion', withAuth, (req, res) => {
+router.get('/discussion', withAuth, async (req, res) => {
     if (!req.session.loggedIn) {
       res.redirect('/');
       return;
     }
+
+    const discussData = await Discussion.findAll({
+        include: [
+            {
+                model: User,
+                attributes: ['name', 'comment'],
+            },
+            {
+                model: Book,
+                attributes: ['title', 'author', 'ISBN', 'comment', 'user_id'],
+            },
+        ]
+    });
+
+    const discussions = discussData.map((newDiscussion)=> 
+    newDiscussion.get({plain: true}) );
     
-    res.render('discussion', {loggedIn: req.session.loggedIn,});
+    res.render('discussion', {discussions, loggedIn: req.session.loggedIn,});
+});
+
+// get one discussion
+router.get('/discussion/:id', async (req, res) => {
+    try{
+        const discussData = await Discussion.findByPk(req.params.id);
+        const discussion = discussData.get({plain: true});
+        //if no data throw error
+        if(!discussion){
+            res.status(400);
+        };
+
+        res.render('discussion',{...discussion, logged_in: req.session.logged_in
+        });
+
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
 //! Send user to nextread page if logged in else go to login
